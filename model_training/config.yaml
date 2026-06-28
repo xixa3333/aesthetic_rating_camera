@@ -1,0 +1,30 @@
+# config.yaml
+model:
+# custom, mobilenet
+  name: "mobilenet"
+  target_size: 512
+
+dataset:
+  raw_csv_path: "data/ground_truth_dataset.csv"
+  raw_img_dir: "data/images"
+  processed_dir: "data/processed_ava_512"
+  padding_mode: "mean"
+  min_score: 1.2350408
+  max_score: 9.497328
+
+train:
+  batch_size: 32
+  epochs: 100
+  lr: 1.0e-4
+  lr_patience: 3
+  early_patience: 5
+  num_workers: 5
+  seed: 42
+  weight_decay: 1.0e-4
+  alpha: 0.7
+
+paths:
+  checkpoint_dir: "checkpoints"
+  best_model: "checkpoints/best_mobilenet_512.pth"
+  plot_dir: "plot"
+
